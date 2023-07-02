@@ -68,6 +68,7 @@
             this.listIslemler = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnEmiStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tmrIslem
@@ -357,11 +358,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnEmiStart
+            // 
+            this.btnEmiStart.Location = new System.Drawing.Point(189, 118);
+            this.btnEmiStart.Name = "btnEmiStart";
+            this.btnEmiStart.Size = new System.Drawing.Size(75, 23);
+            this.btnEmiStart.TabIndex = 26;
+            this.btnEmiStart.Text = "EmiStart";
+            this.btnEmiStart.UseVisualStyleBackColor = true;
+            this.btnEmiStart.Click += new System.EventHandler(this.btnEmiStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 323);
+            this.Controls.Add(this.btnEmiStart);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.listIslemler);
@@ -436,6 +448,7 @@
         private System.Windows.Forms.ListBox listIslemler;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEmiStart;
     }
 }
 

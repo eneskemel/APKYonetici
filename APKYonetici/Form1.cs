@@ -42,10 +42,10 @@ namespace APKYonetici
         int typeSubChat1 = 1;
         int typeChannel2 = 2;
         int typeSub43 = 3;
-        int subChatProccesCount = 100;
-        int uChannelProccesCount = 30;
-        int sub4subProccesCount = 20;
-        int islemYapCoinCheck = 999999999;
+        int subChatProccesCount = 2;
+        int uChannelProccesCount = 2;
+        int sub4subProccesCount = 2;
+        int islemYapCoinCheck = 16000;
 
 
 
@@ -234,7 +234,7 @@ namespace APKYonetici
             if (deger == 4)
             {
                 listLog.SelectedIndex = listLog.Items.Count - 1;
-                videoClick();
+                videoClick("com.google.android.youtube:id/bottom_bar_container");
                 videoClickCount++;
                 lblVideoCount.Text = "Tıklanan Video Sayısı = " + videoClickCount;
             }
@@ -269,11 +269,13 @@ namespace APKYonetici
         }
 
         [Obsolete]
-        private void videoClick()
+        private void videoClick(String element)
         {
             try
             {
-                IWebElement playClick = driver.FindElement(By.Id("com.google.android.youtube:id/bottom_bar_container"));
+                //com.google.android.youtube:id/bottom_bar_container
+                //cptstudio.sub4sub:id/btn_play
+                IWebElement playClick = driver.FindElement(By.Id(element));
                 playClick.Click();
                 listLog.Items.Add("Play basıldı.");
             }
@@ -986,7 +988,7 @@ namespace APKYonetici
             if (deger == 4)
             {
                 listLog.SelectedIndex = listLog.Items.Count - 1;
-                videoClick();
+                videoClick("cptstudio.sub4sub:id/btn_play");
                 videoClickCount++;
                 lblVideoCount.Text = "Tıklanan Video Sayısı = " + videoClickCount;
             }
@@ -1251,7 +1253,7 @@ namespace APKYonetici
             if (deger == 4)
             {
                 listLog.SelectedIndex = listLog.Items.Count - 1;
-                videoClick();
+                videoClick("com.google.android.youtube:id/bottom_bar_container");
                 videoClickCount++;
                 lblVideoCount.Text = "Tıklanan Video Sayısı = " + videoClickCount;
             }
@@ -1358,6 +1360,12 @@ namespace APKYonetici
 
 
 
+        }
+
+        [Obsolete]
+        private void btnEmiStart_Click(object sender, EventArgs e)
+        {
+            emilatorEtkinlestir(emi1ServiceInfo, deviceID, deviceName, subPackage, subActivity);
         }
     }
 }
